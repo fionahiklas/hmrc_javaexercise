@@ -10,4 +10,11 @@ public class Checkout
   public Checkout(PriceList priceList) {
     this.priceList = priceList;
   }
+
+  public String createTheReceipt(long[] items) {
+    for(long itemId: items) {
+      ItemPrice itemPrice = priceList.getItemPrice(itemId);
+    }
+    return null;
+  }
 }
