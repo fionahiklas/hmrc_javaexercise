@@ -43,3 +43,15 @@ This gave the following output
 [INFO] Final Memory: 14M/157M
 [INFO] ------------------------------------------------------------------------
 ```
+
+### Downloading Dependencies
+
+I Had to include the hamcrest library dependency when realising that the hamcrest-core doesn't have the Matchers class.
+
+Adding this to the pom is easy but then need to get the jar actually pulled into the local repository, used the following command
+
+```
+mvn dependency:resolve
+```
+
+Had to kick intelliJ by right-clicking on the pom.xml file and selecting the Maven->ReImport menu.
