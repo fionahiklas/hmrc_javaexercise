@@ -1,7 +1,12 @@
 package com.hiklas.mucking.around;
 
 /**
- * Created by fiona on 07/12/2016.
+ * Implementation of the price list that just holds the apple and
+ * orange items.
  */
-public class ApplesAndOrangesPriceList {
+public class ApplesAndOrangesPriceList implements PriceList {
+
+  public ItemPrice getItemPrice(int id) {
+    return null;
+  }
 }

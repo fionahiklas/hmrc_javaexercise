@@ -3,6 +3,7 @@ package com.hiklas.mucking.around;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.instanceOf;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -24,5 +25,9 @@ public class ApplesAndOrangesPriceListTest {
     assertThat(priceListInstance, notNullValue());
   }
 
-  
+  @Test
+  public void testTypeOfPriceList() {
+    assertThat(priceListInstance, instanceOf(PriceList.class));
+  }
+
 }
