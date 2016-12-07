@@ -12,9 +12,23 @@ public class Checkout
   }
 
   public String createTheReceipt(long[] items) {
+    StringBuffer receiptText = new StringBuffer();
+    int runningTotal = 0;
+
     for(long itemId: items) {
       ItemPrice itemPrice = priceList.getItemPrice(itemId);
+      runningTotal += itemPrice.getPriceInPence();
+      receiptText.append(lineItem(itemPrice.getDescription(), itemPrice.getPriceInPence()));
     }
-    return null;
+    receiptText.append(total(runningTotal));
+    return receiptText.toString();
+  }
+
+  private String lineItem(String description, int priceInPence) {
+    return String.format("%s %d\n", description, priceInPence);
+  }
+
+  private String total(int totalInPence) {
+    return String.format("TOTAL: %d", totalInPence);
   }
 }
