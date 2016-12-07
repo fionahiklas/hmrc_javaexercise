@@ -1,12 +1,13 @@
 package com.hiklas.mucking.around;
 
 /**
- *
+ * Takes a list of items and produces an itemised receipt
  */
 public class Checkout
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
+  private PriceList priceList;
+
+  public Checkout(PriceList priceList) {
+    this.priceList = priceList;
+  }
 }
