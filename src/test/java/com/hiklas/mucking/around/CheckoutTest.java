@@ -77,5 +77,15 @@ public class CheckoutTest
     assertThat(result, equalTo("Vimes 20\nTOTAL: 20"));
   }
 
+  @Test
+  public void testCreateReceipt_ThreeItemOutput() {
+    long[] itemsToTest = { 1, 10, 1 };
+
+    when(priceList.getItemPrice(1)).thenReturn(testItemPrice_one);
+    when(priceList.getItemPrice(10)).thenReturn(testItemPrice_two);
+
+    String result = checkoutTotest.createTheReceipt(itemsToTest);
+    assertThat(result, equalTo("Vimes 20\nMort 60\nVimes 20\nTOTAL: 100"));
+  }
 
 }
