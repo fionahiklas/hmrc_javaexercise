@@ -55,3 +55,9 @@ mvn dependency:resolve
 ```
 
 Had to kick intelliJ by right-clicking on the pom.xml file and selecting the Maven->ReImport menu.
+
+
+## Test Exercise
+
+The FullTest class provides example test to exercise the full implementation.
+
