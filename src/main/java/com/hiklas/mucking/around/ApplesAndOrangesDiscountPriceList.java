@@ -3,11 +3,11 @@ package com.hiklas.mucking.around;
 /**
  * Implementation of a price list that counts items for offers
  */
-public class DiscountPriceList implements PriceList {
+public class ApplesAndOrangesDiscountPriceList implements PriceList {
 
   private PriceList actualPriceList;
 
-  public DiscountPriceList(PriceList actualPriceList) {
+  public ApplesAndOrangesDiscountPriceList(PriceList actualPriceList) {
     this.actualPriceList = actualPriceList;
   }
 

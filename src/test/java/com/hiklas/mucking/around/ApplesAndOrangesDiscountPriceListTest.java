@@ -7,14 +7,14 @@ import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-import static com.hiklas.mucking.around.DiscountPriceList.OfferType;
-import static com.hiklas.mucking.around.DiscountPriceList.Offer;
+import static com.hiklas.mucking.around.ApplesAndOrangesDiscountPriceList.OfferType;
+import static com.hiklas.mucking.around.ApplesAndOrangesDiscountPriceList.Offer;
 
 
 /**
  *
  */
-public class DiscountPriceListTest {
+public class ApplesAndOrangesDiscountPriceListTest {
 
   public static final long ITEM_ID = 1;
 
@@ -38,7 +38,7 @@ public class DiscountPriceListTest {
   @Test
   public void testCreateDiscountPriceList() {
     PriceList dummyPriceList = createDummyPriceList();
-    DiscountPriceList discountPriceList = new DiscountPriceList(dummyPriceList);
+    ApplesAndOrangesDiscountPriceList discountPriceList = new ApplesAndOrangesDiscountPriceList(dummyPriceList);
 
     assertThat(discountPriceList, notNullValue());
   }
@@ -46,7 +46,7 @@ public class DiscountPriceListTest {
   @Test
   public void testPriceForOneItem() {
     PriceList dummyPriceList = createDummyPriceList();
-    DiscountPriceList discountPriceList = new DiscountPriceList(dummyPriceList);
+    ApplesAndOrangesDiscountPriceList discountPriceList = new ApplesAndOrangesDiscountPriceList(dummyPriceList);
 
     ItemPrice result = discountPriceList.getItemPrice(1);
 
