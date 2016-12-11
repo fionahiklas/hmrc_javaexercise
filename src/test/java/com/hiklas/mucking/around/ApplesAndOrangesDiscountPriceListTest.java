@@ -9,6 +9,9 @@ import static org.hamcrest.Matchers.equalTo;
 
 import static com.hiklas.mucking.around.ApplesAndOrangesDiscountPriceList.OfferType;
 import static com.hiklas.mucking.around.ApplesAndOrangesDiscountPriceList.Offer;
+import static com.hiklas.mucking.around.ApplesAndOrangesPriceList.APPLE_ID;
+import static com.hiklas.mucking.around.ApplesAndOrangesPriceList.ORANGE_ID;
+
 
 
 /**
@@ -54,6 +57,25 @@ public class ApplesAndOrangesDiscountPriceListTest {
     assertThat(result.getDescription(), equalTo("Dummy1"));
     assertThat(result.getPriceInPence(), equalTo(201));
   }
+
+  @Test
+  public void testPriceForOneAppleAndOrange() {
+    PriceList dummyPriceList = createDummyPriceList();
+    ApplesAndOrangesDiscountPriceList discountPriceList = new ApplesAndOrangesDiscountPriceList(dummyPriceList);
+
+    ItemPrice applePrice = discountPriceList.getItemPrice(APPLE_ID);
+    ItemPrice orangePrice = discountPriceList.getItemPrice(ORANGE_ID);
+
+    assertThat(applePrice.getId(), equalTo(APPLE_ID));
+    assertThat(applePrice.getDescription(), equalTo("Dummy"+APPLE_ID));
+    assertThat(applePrice.getPriceInPence(), equalTo((int)(200+APPLE_ID)));
+
+    assertThat(orangePrice.getId(), equalTo(ORANGE_ID));
+    assertThat(orangePrice.getDescription(), equalTo("Dummy"+ORANGE_ID));
+    assertThat(orangePrice.getPriceInPence(), equalTo((int)(200+ORANGE_ID)));
+
+  }
+
 
   private PriceList createDummyPriceList() {
     return new PriceList() {
