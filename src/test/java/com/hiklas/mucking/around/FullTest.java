@@ -1,13 +1,10 @@
 package com.hiklas.mucking.around;
 
 import static org.junit.Assert.assertThat;
-import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.instanceOf;
 import static com.hiklas.mucking.around.ApplesAndOrangesPriceList.APPLE_ID;
 import static com.hiklas.mucking.around.ApplesAndOrangesPriceList.ORANGE_ID;
 
-import org.junit.Before;
 import org.junit.Test;
 
 /**
